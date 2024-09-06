@@ -101,7 +101,7 @@ jobs:
       
         
     - name: Terraform Init
-      working-directory: eks
+      
       run: terraform init
       
     # Checks that all Terraform configuration files adhere to a canonical format
