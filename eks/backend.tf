@@ -1,11 +1,12 @@
 terraform {
-  required_version = "~> 1.9.3"
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.49.0"
+      source = "hashicorp/aws"
+      version = "5.66.0"
     }
   }
+
+  
   backend "s3" {
     bucket         = "ken-ekstest"
     region         = "eu-north-1"
