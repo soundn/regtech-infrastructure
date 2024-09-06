@@ -4,7 +4,7 @@ locals {
 }
 
 module "eks" {
-  source = "${path.root}/../module"
+  source = "../module"
 
   env                   = var.env
   cluster-name          = "${local.env}-${local.org}-${var.cluster-name}"
