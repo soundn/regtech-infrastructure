@@ -1,6 +1,6 @@
 # regtech EKS infrastructure provisioned with Terraform 
 
-# Deploy from VM or PC
+# Deploying from VM or PC
 
 clone the reposiroty
 
@@ -36,28 +36,16 @@ Run `terraform plan` to see the configuration it creates when executed.
 
 `terraform apply`
 
-# Deploy from GithubAction workflow and self-Hosted runner (recommended)
+# Deploy from GitHub Actions workflow and self-hosted runner (recommended)
 
-first you fork the repoistory 
+1. Fork the repository
+2. Clone your forked repository
+3. Create the following secrets in your GitHub repository:
+   - `AWS_ACCESS_KEY_ID`
+   - `AWS_SECRET_ACCESS_KEY`
+4. Edit the Terraform files as needed
+5. Commit and push your changes to the main branch
+6. Go to the Actions tab in your GitHub repository
+7. Run the "Regtech-Infrastructure" workflow
 
-then you clone it 
-
-create the following secrets:
--AWS_ACCESS_KEY_ID
--AWS_SECRET_ACCESS_KEY
-
-once you edit the terraform files to you choosing
-
-commit to the main branch you can then go to the Actions tab and access the Regtech-Infrastructure workflow, 
-
-
-
-![alt text](<Screenshot 2024-09-07 at 17.05.21.png>)
-
-
-
-![alt text](<Screenshot 2024-09-07 at 17.06.23.png>)
-
-
-
-![alt text](<Screenshot 2024-09-07 at 17.07.06.png>)
+// ... existing code with images ...
