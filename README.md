@@ -73,3 +73,98 @@ you can have options
 
 ![alt text](<Screenshot 2024-09-07 at 17.07.06.png>)
 
+
+# on success plan, you goto same place and select apply and on sucesss you will get the image below
+
+![alt text](<Screenshot 2024-09-07 at 17.35.13.png>)
+
+## Create Namespace and RBAC for application 
+# Access cluster from any cli where AWScli is installed and configured to the account and region or you can use AWS cloudshell of the region.
+
+1. confirm that your cluster is active 
+    Run `aws eks describe-cluster --region <your region> --name <cluster-name> --query "cluster.status"`
+2. to connect to cluster and carry out kubectl commands
+    Run `aws eks update-kubeconfig --region <your region> --name <cluster-name>`
+
+# Create Namespace, Service Account, Role & Assign that role
+    ```
+    Run kubectl create ns <your-namespace>
+    ```
+# For the yaml codes below, copy and create the file.yml and Run with `kubectl apply -f file.yml`
+
+# Creating Service Account
+
+
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: <name-of-app>
+  namespace: <your-namespace>
+```
+
+### Create Role 
+
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: app-role
+  namespace: <your-namespace>
+rules:
+  - apiGroups:
+        - ""
+        - apps
+        - autoscaling
+        - batch
+        - extensions
+        - policy
+        - rbac.authorization.k8s.io
+    resources:
+      - pods
+      - secrets
+      - componentstatuses
+      - configmaps
+      - daemonsets
+      - deployments
+      - events
+      - endpoints
+      - horizontalpodautoscalers
+      - ingress
+      - jobs
+      - limitranges
+      - namespaces
+      - nodes
+      - pods
+      - persistentvolumes
+      - persistentvolumeclaims
+      - resourcequotas
+      - replicasets
+      - replicationcontrollers
+      - serviceaccounts
+      - services
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+```
+
+### Bind the role to service account
+
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: app-rolebinding
+  namespace: <your-namespace> 
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: app-role 
+subjects:
+- namespace: webapps 
+  kind: ServiceAccount
+  name: <name-of-app> 
+```
+
+## Now the infrastructre and name space is ready to recieve the app!!!
+## We heard over to the CICD pipleline to deploy a sample game app to this infrastructure.
