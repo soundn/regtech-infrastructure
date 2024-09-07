@@ -36,19 +36,19 @@ Run `terraform plan` to see the configuration it creates when executed.
 
 `terraform apply`
 
-# Deploy from GitHub Actions workflow and self-hosted runner (recommended)
+# Deploy from GitHub Actions workflow (recommended)
 
 1. Fork the repository
 2. Clone your forked repository
 3. Create the following secrets in your GitHub repository:
    - `AWS_ACCESS_KEY_ID`
    - `AWS_SECRET_ACCESS_KEY`
-4. Edit the Terraform files as needed
+4. Edit the Terraform files as needed if needed
 5. run `terraform fmt`
 6. run `terraform validate`
 5. Commit and push your changes to the main branch
 6. Go to the Actions tab in your GitHub repository
-7. Run the "Regtech-Infrastructure" workflow
+7. click on the "Regtech-Infrastructure" workflow
 
 To do that click on Actions
 

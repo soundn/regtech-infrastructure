@@ -29,10 +29,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "my-eks2"
-    region         = "eu-north-1"
-    key            = "eks/terraform.tfstate"
-    encrypt        = true
+    bucket  = "my-eks2"
+    region  = "eu-north-1"
+    key     = "eks/terraform.tfstate"
+    encrypt = true
   }
 
 }
