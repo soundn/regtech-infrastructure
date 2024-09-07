@@ -1,8 +1,12 @@
 # regtech EKS infrastructure provisioned with Terraform 
+# This can be deployed in two ways, from either a VM/PC or from Githubactions workflow
 
 # Deploying from VM or PC
 
-clone the reposiroty
+- `clone the reposiroty`
+- `edit terraform files to your prefrence: like region, backend, number of nodes etc`
+
+
 
 ### Install AWS CLI 
 
@@ -27,6 +31,13 @@ Its very easy to connect Terraform with AWS. Run `aws configure` command and pro
 ### Initialize Terraform
 
 Clone the repository and Run `terraform init`. This will intialize the terraform environment for you and download the modules, providers and other configuration required.
+
+### format and validate the terraform configurations
+
+Run `terraform fmt`
+
+Run `terraform validate`
+
 
 ### Optionally review the terraform configuration
 
