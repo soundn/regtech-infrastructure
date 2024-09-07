@@ -85,6 +85,14 @@ you can have options
     Run `aws eks describe-cluster --region <your region> --name <cluster-name> --query "cluster.status"`
 2. to connect to cluster and carry out kubectl commands
     Run `aws eks update-kubeconfig --region <your region> --name <cluster-name>`
+3. to enable access to the cluster
+    Run 
+    ```
+    aws eks update-cluster-config \
+    --region <your region> \
+    --name <cluster-name> \
+    --resources-vpc-config endpointPublicAccess=true,endpointPrivateAccess=true
+    ```
 
 # Create Namespace, Service Account, Role & Assign that role
     ```
