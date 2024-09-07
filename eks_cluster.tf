@@ -30,15 +30,6 @@ module "eks" {
     }
   }
 
-  manage_aws_auth_configmap = true
-
-  aws_auth_users = [
-    {
-      userarn  = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/AWSReservedSSO_AWSAdministratorAccess_*"
-      username = "admin"
-      groups   = ["system:masters"]
-    }
-  ]
 }
 
 data "aws_caller_identity" "current" {}
