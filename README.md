@@ -44,8 +44,21 @@ Run `terraform plan` to see the configuration it creates when executed.
    - `AWS_ACCESS_KEY_ID`
    - `AWS_SECRET_ACCESS_KEY`
 4. Edit the Terraform files as needed
+5. run `terraform fmt`
+6. run `terraform validate`
 5. Commit and push your changes to the main branch
 6. Go to the Actions tab in your GitHub repository
 7. Run the "Regtech-Infrastructure" workflow
 
-// ... existing code with images ...
+To do that click on Actions
+
+![alt text](<Screenshot 2024-09-07 at 17.05.21.png>)
+
+Click on Regtech-Infrastructure you use the drop down to choose to plan, apply or destroy
+
+![alt text](<Screenshot 2024-09-07 at 17.06.23.png>)
+
+you can have options
+
+![alt text](<Screenshot 2024-09-07 at 17.07.06.png>)
+
