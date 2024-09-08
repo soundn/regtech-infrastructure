@@ -1,3 +1,5 @@
+![alt text](diagram-export-08-09-2024-04_57_25.png)
+
 # regtech EKS infrastructure provisioned with Terraform 
 # This can be deployed in two ways, from either a VM/PC or from Githubactions workflow
 
