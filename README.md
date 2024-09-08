@@ -78,6 +78,11 @@ you can have options
 
 ![alt text](<Screenshot 2024-09-07 at 17.35.13.png>)
 
+# goto the EKS console After a successful workflow Apply action and click on create access to the user this will take you to where you attach the following policy  
+1. AmazonEKSClusterPolicy
+2. AmazonEKSWorkerNodePolicy
+3. AmazonEKSServicePolicy
+4. AmazonEKS_CNI_Policy
 ## Create Namespace and RBAC for application 
 # Access cluster from any cli where AWScli is installed and configured to the account and region or you can use AWS cloudshell of the region.
 
